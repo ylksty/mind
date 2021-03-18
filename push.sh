@@ -13,7 +13,7 @@ then
 fi
 
 git commit -m "🎨 $message"
-git push -f https://github.com/ylksty/thinkJava.git master
-git push -f https://gitee.com/joeup/think-java.git master
+git push -f https://github.com/ylksty/mind.git master
+git push -f https://gitee.com/joeup/mind.git master
 
 echo "🎨 $message"

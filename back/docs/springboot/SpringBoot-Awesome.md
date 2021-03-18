@@ -2,10 +2,10 @@
 
 ## Java项目开发快速开发脚手架
 
-| 项目名    | 开源地址                              | 官网              |
-| --------- | ------------------------------------- | ----------------- |
-| RuoYi-Vue | https://gitee.com/y_project/RuoYi-Vue | http://ruoyi.vip/ |
-| elunez    | https://github.com/elunez             |                   |
+| 项目名                         | 开源地址                              | demo                  |
+| ------------------------------ | ------------------------------------- | --------------------- |
+| [RuoYi-Vue](http://ruoyi.vip/) | https://gitee.com/y_project/RuoYi-Vue | http://vue.ruoyi.vip/ |
+| elunez                         | https://github.com/elunez             |                       |
 
 ## springboot优秀项目
 
