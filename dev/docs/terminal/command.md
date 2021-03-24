@@ -4,11 +4,11 @@
 
 ## 1、文件管理
 
-### awk
+### `awk`
 
-### cat
+### `cat`
 
-### echo
+### `echo`
 
 ### other
 
@@ -21,17 +21,17 @@
 
 ## 2、文档编辑
 
-### sed
+### `sed`
 
 - `sed -i '' 1,3d _navbar.md`
 
 - `sed -i '' 's/^\* \([^\[]*[^)]$\)/* [\1](\README\#\1)/' _navbar.md`
 
-### grep
+### `grep`
 
 - `ps -ef|grep activemq|grep -v grep`
 
-### wc
+### `wc`
 
 - `wc testfile testfile_1 testfile_2`
 
@@ -50,12 +50,12 @@
 
 ## 4、磁盘管理
 
-### du
+### `du`
 
 - disk usage 显示目录或文件的大小
 - `du -sh ./*`
 
-### df
+### `df`
 
 - disk free 显示目前在 Linux 系统上的文件系统磁盘使用情况统计
 
@@ -63,42 +63,42 @@
 
 ## 6、网络通讯
 
-### lsof
+### `lsof`
 
 - list open files 列出当前系统打开文件
 - `lsof -i:61616`
 - `lsof -i tcp:8080`
 
-### tcpdump
+### `tcpdump`
 
 - 倾倒网络传输数据
 
-### traceroute
+### `traceroute`
 
 - 显示数据包到主机间的路径
 - `traceroute www.google.com`
 
-### netstat
+### `netstat`
 
 - 显示网络状态
 - `netstat -anp|grep 61616`
 
-### ssh-copy-id
+### `ssh-copy-id`
 
 > ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.33.11
 
 ## 7、系统管理
 
-### ps
+### `ps`
 
 - process status
 - `ps -ef | grep php | grep -v grep`
 
-### top
+### `top`
 
 - 实时显示 process 的动态
 
-### uname
+### `uname`
 
 - 显示系统信息
 
@@ -108,7 +108,7 @@
 
 ## 9、备份压缩
 
-### tar
+### `tar`
 
 - tape archive
 - 解压文件
