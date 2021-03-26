@@ -114,6 +114,13 @@
 - 解压文件
   - tar -zxvf abc.tgz
 
+### unar
+
+- brew install unar
+- unzip 我的文件.zip
+- unar -encoding GBK 繁體字目錄.zip
+- unar -encoding GB\ 18030 繁體字目錄.zip
+
 ## 10、yum
 
 - yum makecache fast

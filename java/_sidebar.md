@@ -1,11 +1,10 @@
 - 一、JavaSE
   - [Java基础](/java/01javase/javaBase.md)
 - 二、前端基础
-  - ui框架
 - 三、Mysql
   - Mysql高级
 - 四、JavaWeb
-  - 基本概念
+  - [JavaWeb](../java/04javaweb/java-web.md)
 - 五、SSM框架
   - MyBatis
   - Spring
@@ -14,22 +13,21 @@
   - [Map](/java/06vue/map.md)
   - uni-app
 - 七、微服务
+  - [spring-boot-start-xxx](../java/07micro/spring-boot-start-xxx.md)
   - SpringBoot
-    - [SpringBoot-Awesome](/java/07micro/boot/SpringBoot-Awesome.md)
-    - [ruoyi-cloud](/java/07micro/boot/ruoyi-cloud.md)
-    - [SpringIssue](/java/07micro/boot/SpringIssue.md)
+    - [SpringBoot-Awesome](../java/07micro/boot/SpringBoot-Awesome.md)
+    - [ruoyi-cloud](../java/07micro/boot/ruoyi-cloud.md)
+    - [SpringIssue](../java/07micro/boot/SpringIssue.md)
   - SpringCloud
-    - [spring-cloud-starter-gateway](/java/07micro/cloud/spring-cloud-starter-gateway.md)
+    - [spring-cloud-starter-gateway](../java/07micro/cloud/spring-cloud-starter-gateway.md)
   - SpringCloud Alibaba
   - MyBatiesPlus
-
 - 八、Linux运维
   - Linux
   - Nginx
   - Docker
   - Jenkins
   - Kubernetes
-
 - 九、中间件
   - Redis
   - ElasticSearch
@@ -37,5 +35,5 @@
   - ActiveMQ
   - Sharding-JDBC
 - 十、其他
-  - 23种设计模式
+  - [Java设计模式](../java/10other/java-design-pattern.md)
   - Netty
