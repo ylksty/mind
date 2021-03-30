@@ -1,44 +1,30 @@
-## Java设计模式
+# Java设计模式
 
-## 1 其他
+# 七大原则
 
-> https://www.bilibili.com/video/BV1G4411c7N4?p=3
+> 设计模式的目的：代码重用性、可读性、可扩展性、可靠性（增加新功能，对原来的功能没有影响）、高内聚、低耦合
 >
-> https://plantuml.com/zh/
-
-### 设计模式有多重要
-
-> 当看源码时，感觉没有方向
+> 核心思想
 >
-> 设计模式必须要学，这都是前辈智慧的总结，难道你要从别的源码中总结这些模式吗？
->
-> 最佳服用方式，根据文档把测试跑通，画UML，回来看视频
+> - 找出应用中可能需要变化之处，把他们独立出来，不要和那些不需要变化的代码混在一起
+> - 针对接口编程，而不是针对现实编程
+> - 为了交互对象之间的松耦合设计而努力
 
-## 2 设计模式的七大原则
-
-### 2.0 设计模式的目的
-
-- 代码重用性
-- 可读性
-- 可扩展性
-- 可靠性（增加新功能，对原来的功能没有影响）
-- 高内聚、低耦合
-
-### 2.1 单一职责
+## 1. 单一职责
 
 1. 一个类只负责一项职责
 2. 提高类的可读性，可维护性
 3. 降低变更引起的风险
 4. 通常应当遵守单一职责原则，只有逻辑足够简单，才可以在代码级违反单一职责原则；只有类中方法数量足够少，才可以在方法级别保持单一职责原则
 
-### 2.2 接口隔离
+## 2. 接口隔离
 
 > Interface Segregation Principle
 
 1. 一个类对另一个类的依赖应该建立在最小的接口上
 2. 所谓接口隔离，将功能接口拆分为独立的几个接口，类分别继承接口并重写，被别的类依赖
 
-### 2.3 依赖倒转
+## 3. 依赖倒转
 
 > Dependence Inversion Principle
 
@@ -115,7 +101,7 @@
    2. 变量的声明雷翔尽量是抽象类或接口，这样我们的变量应用和实际对象之间，就存在一个缓存层，利于程序扩展和优化
    3. 集成式遵循里式替换原则
 
-### 2.4 里式替换
+## 4. 里式替换
 
 > Liskov Substitution Principle
 
@@ -123,16 +109,16 @@
 2. 所有引用基类的地方必须能透明地使用其子类的对象
 3. 使用继承是，尽量不要重写父类的方法
 4. 用聚合，组合，依赖，来替换原来的继承
-   - 聚合，组合，指原理的父类，通过new父类为，子类的一个属性，来使用原来的父类方法
+   - 聚合，组合，指原来的父类，通过new父类为，子类的一个属性，来使用原来的父类方法
 
-### 2.5 开闭
+### 5. 开闭
 
 > Open Closed Principle
 
 1. （提供方）扩展开放，（使用方）修改关闭。用抽象构建框架，用实现扩展细节
 2. 软件变化，通过扩展软件实体的香味来实现变化，而不是通过修改已有的代码来实现变化
 
-### 2.6 迪米特
+### 6. 迪米特
 
 > Demeter Principle
 
@@ -143,7 +129,7 @@
    - 直接的朋友：成员变量，方法参数，方法返回值中的类
    - 非直接朋友：即默认的类，局部变量中的类，最好不要出现
 
-### 2.7 合成复用
+### 7. 合成复用
 
 > Composite Reuse Principle
 
@@ -152,86 +138,77 @@
    1. 聚合 Aggregation setA(A a)
    2. 组合 Composite private A a = new A();
 
-### 2.8 设计原则核心思想
+# UML类图
 
-1. 找出应用中可能需要变化之处，把他们独立出来，不要和那些不需要变化的代码混在一起
-2. 针对接口编程，而不是针对现实编程
-3. 为了交互对象之间的松耦合设计而努力
-
-## 3 UML类图
-
-### 3.1 UML基本介绍
+## 1. UML基本介绍
 
 - 软件PlantUML
-  - 代码开发画各种图
   - https://plantuml.com/zh/
 
-- UML Unified modeling language 统一建模语言，用户软件系统分析和设计的语言工具，帮助软件开发人员进行思考和记录思路的结果
-- UML本身是一套符号的规定
 
-### 3.2 UML图
-
-- 用例图
-- 静态结构图：**类图**、对象图、包图、组件图、部署图
-- 动态行为图：交互图（时序与协作图）、状态图、活动图
-- 说明
-  - 类图是描述类与类之间的关系的，是UML图中最核心的
-
-### 3.3 UML类图
+## 2. UML类图
 
 - 用户描述系统中的类本身的组成和类之间的各种静态关系
 - 类之间的关系：依赖、继承（泛化）、实现、关联、聚合、组合
 
-![Relation.puml](http://www.plantuml.com/plantuml/png/Syv9B2usC5ImqTDJS0QpZHIi55nI2rBpKbBpaYjZyfxic_jYwpGkYAIfWasDhYvKfHbGfNjgNcfHOavcLM99PdvUJDxptSkVTUv_tD3uRFFifpqmRUP0RN0BB83QWbAHz3phM_gqV_7JTVEUzss0QZ1MWDjY0bJkM5oSdvm9LVwqTVEBnYbGXPOA-J2LXWOWbUdfHQdfK9Kl6cSzdT01KMbegA05LmdoetD-Ra5-SMP9AiZHBK1r0000)
+![Relation.puml](http://www.plantuml.com/plantuml/png/TO-_IWD14CRxVOef_KDIM8hD6Pi8eXZBQzQxSRDmkxFiJCGZf0WeM5g8XU1JY9NWqnYynyYIsoQAK_--t_UDM6aGBh7HOiaVgB4NZ3UwGZYZcKnXhY0TwtPd8j5w0opJNRLGnJLBr9N0CTKjM1SQTEY5js9pdQd5Ny6eqSnmIWXu9-XhxarzSF-MR0t_XOgGshP8n-ONgQxYp0KO33OLXr0mKsKtJvP-zV3UBPzLxpaQ3ZDpWY4DGL-rfV_-Uki-NbHcA7aA6oyepKmkOoAQxEgMhwkdnypj9MvyFadCY5mWjeAb__cyJyGQ)
 
 
 
-### 3.4 依赖关系 Dependence
+# UML六大关系
+
+## 1. 依赖关系 Dependence
 
 - 只要在类中用到对方，那么就存在依赖关系
 
 - 类中用到对方、类的成员属性、方法的返回类型、接收的参数类型、方法中使用到
 
 
-### 3.5 泛化继承 Generalization
+## 2. 泛化继承 Generalization
 
 - 依赖关系的特例
+- 抽象类无须知道被谁继承
+- 子类需要知道继承自谁
 
-### 3.6 实现关系 Implementation
+## 3. 实现关系 Implementation
 
 - 依赖关系的特例
+- 接口无须知道被谁实现
+- 实现类需要知道实现了谁
 
 ![Dependence-Generalization-Implementation.puml](http://www.plantuml.com/plantuml/png/VPAnIWD148RxVOhjZCXT-YLOQ41IAQHDizcTd2jtkyVU912JW9Q2n2wDQ2DY9u9O2VemciJ7y2wvmriziztmp_Spyyzk7IF62QlNuv1hx4UXBqnK5o5F4ayg7bWU4O8AGw1DY45Bq0Ay0z1WUQXEEIgZlLOKXn21nbL9o0gdHs0JevlSv7MhkS-jTCIyI9svpNWNROCTA05xm3KT4Pe-BouyMSa-KtOIFe3QMYwqRKO7Hicr7W2k1yYRb6IqfH5i03Pjp8TRjKP6gjwmLk0JeWq2jIeuHbPAeQC_tsw-NcQ4_1tNztSBosentt-JcArMhPVoujq4BHT8yoIvQVVZs5WSbM99EnKE6Jtide109nO98U1_7HD2L1PHZmjmRp9ow5zP5kpcMnPm0JAgP0d-sQGnzhmA5qRTNzZHozU7nSNxnzdvulbwVZbpmwEDiUzNshY_jwCNq_lvrTtyyNOvVIBV)
 
 
 
-### 3.7 关联关系 Association
+## 4. 关联关系 Association
 
 - 类与类之间的联系，依赖关系的特例
 
 - 有导航线：即双向关系或单向关系
 
-### 3.8 聚合关系 Aggregation
+## 5. 聚合关系 Aggregation
 
-- **整体和部分的关系**，整体和部分可以分开，关联关系的特例
+- 整体和部分的关系，**整体和部分可以分开**，关联关系的特例
 - 导航性、多重性
 
-### 3.9 组合关系 Composition
+## 6. 组合关系 Composition
 
-- 整体与部分不能分开
+- **整体与部分不能分开**
 - Person和Head不能分开，组合，Person和IDCard可以分开，聚合
 
 ![Association-Aggregation-Composition.puml](http://www.plantuml.com/plantuml/png/TL8xJiGm4Erz2dTaaK9w5qYhKB35IXmWZPLOYQNO4yKE3K82YO82n5BGS0bQ4DSXWcFWRx9PGGhF-CrxytEE6gqxHRAiQwdKWsXFIX1PsLAbqehJkgS2QQvRXjTAGScfvY3JTLtthFP-3g83nQsFa1FY2zOhaFWAOVEblCffNn6yERFMOmsZ1ZatfxyhfdquMR9N15y2hz1roEpHcBbpTKYeDsNoryH7Gt0rfSXRq0r2eSSqFVK89liJ5d9yV1btpr_lD-FRXpbdVkpXaF_qiE37QcOxWsPzR5d0e1Z1MnYaOX6It30iw9nfZgtb9kx4JXUtCHES874MUYoydPSMcWZLuiLNGLDhO8Ro53lK_BI5_Bbz7NVtXqod_uSQYhYNZJixDYeB6CdUprB8xyyxAmaiMApsZzI_)
 
 
 
-## 4 设计模式概述
+# 设计模式概述
 
-### 4.1 掌握设计模式的层次
+## 1. 掌握设计模式的层次
 
-- 看源码时需要了解设计原理
+1. 初学
+2. 看懂源代码
+3. 随意应用
 
-### 4.2 设计模式介绍
+## 2. 设计模式介绍
 
 - 模式不是代码，而是某类问题的通用解决方案，设计模式（Design pattern）代表了最佳的实践
 
@@ -239,25 +216,33 @@
 
 - 《设计模式》 GOF
 
-### 4.3 设计模式类型
+## 3. 设计模式类型
 
 - 三种类型，共23种
-- 创建型： **单例**、抽象工厂、原型、建造者、**工厂**
+- 创建型： 单例、一般工厂、工厂方法、抽象工厂、原型、建造者
 - 结构型：适配器、桥接、**装饰**、组合、外观、享元、**代理**
 - 行为型：模板方法、命令、访问者、迭代器、**观察者**、中介者、备忘录、解释器（Interpreter）、状态、策略、职责链
 
-## 5 单例设计模式
+## 4. 抽象原则
 
-### 5.1 单例模式介绍
+- 创建对象实例时，不要直接new类，而是把这个new类的动作放到一个工厂的方法中，并返回。有的书上说，变量不要直接持有具体类的引用
+- 不要让类继承具体类，而是继承抽象类或者是实现interface
+- 不要覆盖基类中已经实现的方法
 
-- 采取一定的方法保证在整个的软件系统中，对某个类智能存在一个对象实例，并且该类只提供一个取得其对象实例的静态方法
-- 比如Hibernate的SessionFactory
+# 创建型模式(5)
 
-### 5.2 单例模式八种方式
+## 1. 单例模式(8)
 
-### 5.3 饿汉式（静态常量）
+- why
+  - 保证了系统内存中该类只存在一个对象，节省了系统资源，对于一些需要平凡创建销毁的对象，使用单例模式可以提高系统性能
+- how
+  - 想实例化一个单例类的时候，必须要记住使用相应的获取对象的方法，而不是new
+- when
+  - 创建对象耗时过多或耗资源过多，重量级对象，但又经常用到的对象、工具类对象、频繁访问数据库或文件的对象（如数据源、session工厂）
 
-```java
+### 1.1 饿汉式（静态常量）
+
+~~~java
 //饿汉式(静态变量)
 static class Singleton {
     //1. 构造器私有化, 外部不能new
@@ -271,11 +256,11 @@ static class Singleton {
         return instance;
     }
 }
-```
+~~~
 
-### 5.4 饿汉式（静态代码块）
+### 1.2 饿汉式（静态代码块）
 
-```java
+~~~java
 //饿汉式(静态代码块)
 static class Singleton {
     //1. 构造器私有化, 外部不能new
@@ -293,16 +278,15 @@ static class Singleton {
         return instance;
     }
 }
-```
+~~~
 
-- 优缺点
-  - 优点：写法简单，类装载classloader的时候完成实例化，避免线程同步问题
-  - 缺点：没有Lazy Loading，如果未使用，内存浪费
-  - 结论：可用，可能内存浪费
+- 优点：写法简单，类装载classloader的时候完成实例化，避免线程同步问题
+- 缺点：没有Lazy Loading，如果未使用，内存浪费
+- 结论：可用，可能内存浪费
 
-### 5.5 ~~懒汉式（线程不安全）~~
+### 1.3 ~~懒汉式（线程不安全）~~
 
-```java
+~~~java
 static class Singleton {
     private static Singleton instance;
 
@@ -317,13 +301,13 @@ static class Singleton {
         return instance;
     }
 }
-```
+~~~
 
 - 优点：Lazy Loading
 - 缺点：多线程不安全
 - 总结：不用
 
-### 5.6 ~~懒汉式（同步方法）~~
+### 1.4 ~~懒汉式（同步方法）~~
 
 ```java
 // 懒汉式(线程安全，同步方法)
@@ -347,7 +331,7 @@ static class Singleton {
 - 缺点：方法进行同步，效率太低
 - 总结：不用
 
-### 5.7 ~~懒汉式（同步代码块）~~
+### 1.5 ~~懒汉式（同步代码块）~~
 
 ```java
     // 懒汉式(线程都不安全，同步代码块)
@@ -370,7 +354,7 @@ static class Singleton {
 
 - 错误，不能使用
 
-### 5.8 懒汉式+双重检查
+### 1.6 懒汉式+双重检查
 
 ```java
 // 懒汉式(线程安全，双重检查)
@@ -400,7 +384,7 @@ static class Singleton {
   - Double-Check保证线程安全
 - 结论：推荐使用
 
-### 5.9 静态内部类
+### 1.7 静态内部类
 
 ```java
     // 静态内部类完成， 推荐使用
@@ -429,7 +413,7 @@ static class Singleton {
 - 优点：避免线程不安全，利用景天内部类特点实现延迟加载，效率高
 - 结论：推荐
 
-### 5.10 枚举
+### 1.8 枚举
 
 ```java
 //使用枚举，可以实现单例, 推荐
@@ -441,41 +425,24 @@ enum Singleton {
 }
 ```
 
-- JDK1.5添加的枚举来实现单例模式。不仅避免多线程同步，而且还能防止序列化重建新对象
+- tip
+  - JDK1.5添加的枚举来实现单例模式。不仅避免多线程同步，而且还能防止序列化重建新对象
 - 结论：推荐
 
-### 5.11 单例模式在JDK应用的源码分析
+### 1.x 单例模式在JDK应用的源码分析
 
 - java.lang.Runtime 单例模式（饿汉式）
 
-```java
-public class Runtime {
-    private static Runtime currentRuntime = new Runtime();
+## 2. 简单工厂模式
 
-    public static Runtime getRuntime() {
-        return currentRuntime;
-    }
+> 工厂模式的一种，由工厂决定创建出哪一种产品类的实例，是工厂模式家族中最简单实用的模式
 
-    private Runtime() {
-    }
-```
+- why
+  - 将实例化对象的代码提取出来，放到一个类中统一管理和维护，达到和主项目的依赖关系的解耦。从而提高项目的扩展和维护性
+- when
+  - 当我们会用到大量的创建某种、某类某批对象时，会用到工厂模式
 
-### 5.12 单例模式注意事项和细节说明
-
-- 保证了系统内存中该类只存在一个对象，节省了系统资源，对于一些需要平凡创建销毁的对象，使用单例模式可以提高系统性能
-- 想实例化一个单例类的时候，必须要记住使用相应的获取对象的方法，而不是new
-- 场景：创建对象耗时过多或耗资源过多，重量级对象，但又经常用到的对象、工具类对象、频繁访问数据库或文件的对象（如数据源、session工厂）
-
-## 6 工厂模式
-
-### 6.1 简单工厂模式
-
-> 定义一个创建对象的类，由这个类来封装实例化对象的行为
-
-- 工厂模式的一种，由工厂决定创建出哪一种产品类的实例，是工厂模式家族中最简单实用的模式
-- 当我们会用到大量的创建某种、某类某批对象时，会用到工厂模式
-
-![Pizza.puml](http://www.plantuml.com/plantuml/png/VK-xJiD04EplAxOZ4JAMNAP5WWuY9MMQpNdbdE9xQ6-3abWkw2Yf-JyaFWEJio4MWQlsvg6PkTg8X3ZByr2ZavsjRxItkQunngmqM35QfN0TXL4Bd72Oc-CHeL7GlUjc85juygQ4m1IGQJ9Dz0bRutOCw9sC1Nu_-aUI1xGqMGWRLu7hxgbgbKhvjnkYIAa5xOLSsNVg-NicslvDpoa4uajyBrWO6sgwwpPvFWmxarupeQJeePpdadXv2DGFQAAW6Dt2BqTnmV8zwl4BEw_v0nHAZIjbcJ-ZOGPOLKnL5-lTodqylxs_llnhAJu1)
+![Pizza.puml](http://www.plantuml.com/plantuml/png/VP2_JiCm48TtFuKtMg4aKiOEB4YmGQKoiboTKser_gFp5RMDCh0nClD-I3m6fadK158ysVVTwNUVhpRCFYoop5TWUMUgL3cJgGf2I0eD9O4H0jQ12HJBKrqkzV48iXOodkkwXurySRgGdj03uMpUubDj3TjnGUrutE3setT0VW23inMJjgMqyJuNZH1j_kq6CM2x1UuPRT7jrF5xGjnUnalq7ccATmqhRNo5Tz79qQ7tRFiL8N0RtI_dg41wEdZi1Eh0m5eryiz4FZ4IfSPnQNep59oWPxq9E93hTHv_qeOVS2xalzEJn0smN4WeIy8o2ZdxRBzUFpxVt_uToRy1)
 
 ```java
 //简单工厂类
@@ -501,19 +468,26 @@ public class SimpleFactory {
 }
 ```
 
-- 优点
-  - 添加产品，只要修改SimpleFactory，
+- tip
 
-### 6.2 工厂方法模式
+  - 添加产品，只要修改SimpleFactory，不需要修改每个OrderPizza
+
+  
+
+### 2.x 应用
+
+- java.util.Calendar
+
+## 3. 工厂方法：抽象方法
 
 > 定义一个创建对象的抽象方法，由子类决定要实例化的类。工厂方法模式将对象的实例化推迟到子类
 
-- 将披萨项目的实例化功能抽象成抽象方法，在不同的地域订单子类中具体实现
-
 ![facgorymethod.puml](http://www.plantuml.com/plantuml/png/hLAxRi904EplAqvA0GXXznGf0bM402dvWUMyCbRyEDqjY63n6-do6Mdv6efyHh3F5hT0WQoukzdPcT6iUsiYRSTXg5F8QPEbWIgoKALWxIXA83QG2G4hImOKoHgNosI_1raAUVwUtiWaUInpoB06XcNBFiXjaKHI6zHWi3zmunfRmGS7r8OueTYnjqMQdntwdjj078HmWLvU9sj4YouOxWZpYCSSNaNnLfUeDPeEgxDfPzVPj8FhrHKM9ce5oflc7QuC0hbyRND5jVN-gR5fzwBIz3rgY35IHUDTUPvjwDiOZtXxJVod9aiO1C_ypxWtzkymbgVZz-_Fbs2XAXuxzRsn9_C7)
 
-- 地域订单子类，决定实例化具体的pizza
-- 地域订单子类依赖，地域口味Pizza
+- tip
+  - 将披萨项目的实例化功能抽象成抽象方法，在不同的地域订单子类中具体实现
+  - 地域订单子类，决定实例化具体的pizza
+  - 地域订单子类依赖，地域口味Pizza
 
 ```java
 public abstract class OrderPizza {
@@ -544,29 +518,217 @@ public abstract class OrderPizza {
 }
 ```
 
-### 6.3 抽象工厂模式
+## 4. 抽象工厂模式
 
 > 定义了一个interface用户创建相关或有依赖关系的对象簇，而无需指明具体的类
 
-- 抽象工厂模式可以将简单工厂模式和工厂方法模式进行整合
-- 从设计层面看，抽象工厂模式就是对简单工厂模式的改进（或者称为进一步抽象）
-- 将工厂抽象成两层，AbsFactory(抽象工厂)和具体实现的工厂子类。程序员可以根据创建对象类型使用对应的工厂子类。这样将单个的简单工厂类变成了工厂族，更利于代码的维护和扩展
+- why
+  - 将工厂抽象成两层，AbsFactory(抽象工厂)和具体实现的工厂子类。程序员可以根据创建对象类型使用对应的工厂子类。这样将单个的简单工厂类变成了工厂族，更利于代码的维护和扩展
+  - 抽象工厂模式可以将简单工厂模式和工厂方法模式进行整合
+- tip
+  - 从设计层面看，抽象工厂模式就是对简单工厂模式的改进（或者称为进一步抽象）
 
 ![Absfactory.puml](http://www.plantuml.com/plantuml/png/hL5BJiCm4Dtx59POaAfAiky22OXOe02Lu09ECcqjue_6Bkf7lGOxZi6Mqx3W6AIrejZ9BcqsLcRUlFVcpVNAMcrcQQfh9krQr4cfH5hMp9Yuuco9J1322cEHbPQUwdJETpj6zuGstzMhHIwNL381fy9qtw8Fz4FnYce4pH2YYMkVQWLx3mlbseO0jGd-3TZdHY7or2RaG8WpTFTulm8mu8p1neAiGflJdXLlT0vQ0uuOpRFHgdasGfLB2xXW9T3RmZmq0IlSjcWtMY8mw_oqIIci0D-sEeohdUP2ro10MdCkPvvTahDpc2GtuNa7FJ_96Vtz-Vhx_YITdICekDIWvn6qsxmStVZdYBrL5kvr2tN8Q0ZnykbmJmhXV5RFeOfZBsdIK-fr_m40)
 
-### 6.4工厂模式在JDK-Calendar源码
+## 5. 原型模式
 
-- java.util.Calendar
+### 5.1 传统方式的缺点
 
-### 6.5 工厂模式小结
+```java
+Sheep sheep = new Sheep("tom", 1, "白色");
+Sheep sheep2 = new Sheep(sheep.getName(), sheep.getAge(), sheep.getColor());
+```
 
-- 工厂模式的意义
-  - 将实例化对象的代码提取出来，放到一个类中统一管理和维护，达到和主项目的依赖关系的解耦。从而提高项目的扩展和维护性
-- 三种工厂模式（简单工厂模式、工厂方法模式、抽象工厂模式）
-- 设计模式的抽象原则
-  - 创建对象实例时，不要直接new类，而是把这个new类的动作放到一个工厂的方法中，并返回。有的书上说，变量不要直接持有具体类的引用
-  - 不要让类继承具体类，而是继承抽象类或者是实现interface
-  - 不要覆盖基类中已经实现的方法
+- 如果对象比较复杂或者多处copy，效率低
+- 总是需要重新初始化对象，而不是动态地获得对象运行时的状态，不够灵活
+
+### 5.2 原型模式解决缺点
+
+```java
+Sheep sheep2 = (Sheep)sheep.clone(); //克隆
+```
+
+### 5.3 Spring框架中的原型模式应用
+
+```xml
+<!-- 这里我们的 scope="prototype" 即 原型模式来创建 -->
+<bean id="id01" class="com.ylkget.pattern.prototype.beans.Monster"
+      scope="prototype"/>
+```
+
+### 5.4 浅拷贝
+
+- 基本类型成员变量，直接值拷贝
+- 引用类型成员变量，比如数组、类对象，引用地址拷贝
+
+### 5.5 深拷贝
+
+- 整个对象进行拷贝
+- 实现方式
+  1. 重写clone
+  2. 对象序列化（推荐）
+
+### 5.x
+
+- `private static final long serialVersionUID = 1L;`的作用
+  - 对象序列化到磁盘，反序列化为对象是否过期的设置
+
+## 6. 生成器
+
+- why
+  - 使用相同的构造过程，构建不同的对象
+
+![生成器模式结构](https://refactoringguru.cn/images/patterns/diagrams/builder/structure.png?id=fe9e23559923ea0657aa)
+
+- https://refactoringguru.cn/design-patterns/builder
+
+# 结构型模式(7)
+
+## 1. 适配器
+
+![适配器模式结构](https://refactoringguru.cn/images/patterns/diagrams/adapter/structure-object-adapter.png?id=33dffbe3aece29416244)
+
+- https://refactoringguru.cn/design-patterns/adapter
+
+## 2. 桥接：遥控器
+
+> 一种结构型设计模式，可将一个大类或一系列紧密相关的类拆分为抽象和现实两个独立的层次结构，从而在开发时分别使用。
+
+![桥接模式结构](https://refactoringguru.cn/images/patterns/diagrams/bridge/structure-zh.png?id=8f6df21bea5074e798d6)
+
+- https://refactoringguru.cn/design-patterns/bridge
+
+![bridge-remote.puml](http://www.plantuml.com/plantuml/png/jP9BQiGm38RtFeMWYqa8cUnJMkZh0aCleCIQgS2F47lIGkdTwubDQzF9ijauIB_-JvQyU_D-SdtNJGgDFskr7wtkHeNEjPBnDACMdhsY7eQPvOdQcRJrj9-2LgmwU59CnWisdkOZZWI7LGAV0iAtM9OmsNUQgrfyfP97T3mc6Uj9aGuEhYoyUQQ5WvjS3x76cgomAl9rp5-bFSW5pKWosTE79oFB9YAoAPNR17qEsGiWktKIHwV1MaLeWDsBmK6HhEhVQT0QoYEINGe5ozZq0INRV3Y5V_j3i0Rku8ZAqMsQqHQx-GjljkYlopRwlyZn7K7RtiVBvu5iLoBxx_ku6x0NKMnJxCejNjLy0m00)
+
+## 3. 组合：上下级
+
+![组合模式结构](https://refactoringguru.cn/images/patterns/diagrams/composite/structure-zh.png?id=205c2c970f77efe15b68)
+
+- https://refactoringguru.cn/design-patterns/composite
+
+## 4.装饰：加密压缩
+
+![ 装饰模式结构](https://refactoringguru.cn/images/patterns/diagrams/decorator/structure.png?id=8c95d894aecce5315cc1)
+
+- https://refactoringguru.cn/design-patterns/decorator
+
+  ![伪代码](https://refactoringguru.cn/images/patterns/diagrams/decorator/example.png?id=eec9dc488f00c85f50e7)
+
+## 5.外观
+
+- https://refactoringguru.cn/design-patterns/facade
+
+## 6.享元：省内存
+
+- https://refactoringguru.cn/design-patterns/flyweight
+
+![享元模式结构](https://refactoringguru.cn/images/patterns/diagrams/flyweight/structure.png?id=c1e7e1748f957a479282)
+
+![伪代码](https://refactoringguru.cn/images/patterns/diagrams/flyweight/example.png?id=0818d078c1a79f373e96)
+
+## 7.代理：缓存
+
+- https://refactoringguru.cn/design-patterns/proxy
+
+![代理模式结构](https://refactoringguru.cn/images/patterns/diagrams/proxy/structure.png?id=f2478a82a84e1a1e512a)
+
+![伪代码](https://refactoringguru.cn/images/patterns/diagrams/proxy/example-zh.png?id=7d99b85a7caef20bc3f4)
+
+# 行为模式(10)
+
+## 1.责任链：pipeline、filter
+
+![责任链模式结构](https://refactoringguru.cn/images/patterns/diagrams/chain-of-responsibility/structure.png?id=848f0fc8dca57a44974d)
+
+## 2.命令：点餐，富文本
+
+- https://refactoringguru.cn/design-patterns/command
+
+![命令模式结构](https://refactoringguru.cn/images/patterns/diagrams/command/structure.png?id=3a0f59016d616d29fe90)
+
+![伪代码](https://refactoringguru.cn/images/patterns/diagrams/command/example.png?id=1f42c8395fe54d0e4090)
+
+## 3.迭代器：spammer
+
+![迭代器模式结构](https://refactoringguru.cn/images/patterns/diagrams/iterator/structure.png?id=35ea851f8f6bbe51d79e)
+
+## 4.中介者
+
+## 5.备忘录
+
+## 6.观察者
+
+## 7.状态
+
+## 8.策略
+
+## 9.模板方法：方法增强
+
+- https://refactoringguru.cn/design-patterns/template-method
+
+![模板方法模式结构](https://refactoringguru.cn/images/patterns/diagrams/template-method/structure.png?id=924692f994bff6578d84)
+
+
+
+## 10.访问者
+
+## 11.解释器
+
+## 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Other
+
+- https://refactoringguru.cn/design-patterns
+- Plantuml
+  - https://plantuml.com/zh/class-diagram#3644720244dd6c6a
+
+- B站
+- runoob
+  - https://www.runoob.com/design-pattern/design-pattern-intro.html
+- C语言中文网
+  - http://c.biancheng.net/view/8375.html
+
+
+
+
+
+
 
 
 
