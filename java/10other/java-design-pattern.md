@@ -634,9 +634,9 @@ Sheep sheep2 = (Sheep)sheep.clone(); //克隆
 
 ![伪代码](https://refactoringguru.cn/images/patterns/diagrams/proxy/example-zh.png?id=7d99b85a7caef20bc3f4)
 
-# 行为模式(10)
+# 行为模式(11)
 
-## 1.责任链：pipeline、filter
+## 1.责任链：filter
 
 ![责任链模式结构](https://refactoringguru.cn/images/patterns/diagrams/chain-of-responsibility/structure.png?id=848f0fc8dca57a44974d)
 
@@ -648,19 +648,23 @@ Sheep sheep2 = (Sheep)sheep.clone(); //克隆
 
 ![伪代码](https://refactoringguru.cn/images/patterns/diagrams/command/example.png?id=1f42c8395fe54d0e4090)
 
-## 3.迭代器：spammer
+## 3.迭代器：spammer、pipeline
 
 ![迭代器模式结构](https://refactoringguru.cn/images/patterns/diagrams/iterator/structure.png?id=35ea851f8f6bbe51d79e)
 
-## 4.中介者
+## 4.中介者：备忘录功能
 
-## 5.备忘录
+![中介者模式结构](https://refactoringguru.cn/images/patterns/diagrams/mediator/structure.png?id=1f2accc7820ecfe9665b)
 
-## 6.观察者
+## 5.备忘录：snapshot
 
-## 7.状态
+## 6.观察者：订阅发布
 
-## 8.策略
+## 7.状态：草稿、发布
+
+## 8.策略：pay type
+
+![](https://refactoringguru.cn/images/patterns/diagrams/strategy/structure.png?id=c6aa910c94960f35d100)
 
 ## 9.模板方法：方法增强
 
@@ -670,9 +674,11 @@ Sheep sheep2 = (Sheep)sheep.clone(); //克隆
 
 
 
-## 10.访问者
+## 10.访问者：visit
 
-## 11.解释器
+![](https://refactoringguru.cn/images/patterns/diagrams/visitor/structure-zh.png?id=e30b9ae4fb2267e5c361)
+
+## 11.解释器：四则运算、正则
 
 ## 
 

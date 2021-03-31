@@ -24,13 +24,14 @@
   - SpringCloud Alibaba
   - MyBatiesPlus
 - 八、Linux运维
-  - Linux
-  - Nginx
+  - [Command](../java/08linux/command.md)
+  - [Issue](../java/08linux/Issue.md)
+  - [Nginx](../java/08linux/nginx.md)
   - Docker
-  - Jenkins
+  - [Jenkins](../java/08linux/jenkins.md)
   - Kubernetes
 - 九、中间件
-  - Redis
+  - [Redis](../java/09mware/redis.md)
   - ElasticSearch
   - RabbitMQ
   - ActiveMQ
@@ -38,4 +39,5 @@
 - 十、其他
   - [Java设计模式](../java/10other/java-design-pattern.md)
   - Netty
+  - [Tools](../java/10other/tools.md)
 
