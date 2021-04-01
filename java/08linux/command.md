@@ -16,6 +16,11 @@
 
 ### echo
 
+### scp
+
+- scp [可选参数] file_source file_target
+  - scp ruoyi-modules-system-2.5.0.jar joe@121.42.13.150:/home/joe
+
 ### other
 
 - cut

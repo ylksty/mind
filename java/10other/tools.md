@@ -193,7 +193,13 @@ export LESSCHARSET=utf-8
 
 # MAC
 
+## MacOS
+
+- Mac打开22端口的方法
+  - 系统偏好设置->共享->远程登录
+
 ## iTerm2
 
 - iTerm2 新窗口如何直接跳转到当前窗口的目录？
   - 在 iTerm2 的 Preferences -> Profile 里的 Working Directory 直接选择："Reuse previous session's directory" 
+
