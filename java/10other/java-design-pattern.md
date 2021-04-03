@@ -1,5 +1,7 @@
 # Java设计模式
 
+https://refactoringguru.cn/design-patterns
+
 # 七大原则
 
 > 设计模式的目的：代码重用性、可读性、可扩展性、可靠性（增加新功能，对原来的功能没有影响）、高内聚、低耦合
@@ -598,8 +600,6 @@ Sheep sheep2 = (Sheep)sheep.clone(); //克隆
 
 - https://refactoringguru.cn/design-patterns/bridge
 
-![bridge-remote.puml](http://www.plantuml.com/plantuml/png/jP9BQiGm38RtFeMWYqa8cUnJMkZh0aCleCIQgS2F47lIGkdTwubDQzF9ijauIB_-JvQyU_D-SdtNJGgDFskr7wtkHeNEjPBnDACMdhsY7eQPvOdQcRJrj9-2LgmwU59CnWisdkOZZWI7LGAV0iAtM9OmsNUQgrfyfP97T3mc6Uj9aGuEhYoyUQQ5WvjS3x76cgomAl9rp5-bFSW5pKWosTE79oFB9YAoAPNR17qEsGiWktKIHwV1MaLeWDsBmK6HhEhVQT0QoYEINGe5ozZq0INRV3Y5V_j3i0Rku8ZAqMsQqHQx-GjljkYlopRwlyZn7K7RtiVBvu5iLoBxx_ku6x0NKMnJxCejNjLy0m00)
-
 ## 3. 组合：上下级
 
 ![组合模式结构](https://refactoringguru.cn/images/patterns/diagrams/composite/structure-zh.png?id=205c2c970f77efe15b68)
@@ -626,7 +626,7 @@ Sheep sheep2 = (Sheep)sheep.clone(); //克隆
 
 ![伪代码](https://refactoringguru.cn/images/patterns/diagrams/flyweight/example.png?id=0818d078c1a79f373e96)
 
-## 7.代理：缓存
+## 7.代理：缓存、cdn
 
 - https://refactoringguru.cn/design-patterns/proxy
 

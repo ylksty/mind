@@ -3,7 +3,7 @@
   - [Java基础](/java/01javase/javaBase.md)
 - 二、前端基础
 - 三、Mysql
-  - Mysql高级
+  - [Mysql常用命令](../java/03mysql/mysql-command.md)
 - 四、JavaWeb
   - [JavaWeb](../java/04javaweb/java-web.md)
 - 五、SSM框架
@@ -14,6 +14,7 @@
   - [Map](/java/06vue/map.md)
   - uni-app
 - 七、微服务
+  - [artifactId](../java/07micro/artifactId.md)
   - [spring-boot-start-xxx](../java/07micro/spring-boot-start-xxx.md)
   - SpringBoot
     - [SpringBoot-Awesome](../java/07micro/boot/SpringBoot-Awesome.md)
@@ -24,10 +25,11 @@
   - SpringCloud Alibaba
   - MyBatiesPlus
 - 八、Linux运维
-  - [Command](../java/08linux/command.md)
   - [Issue](../java/08linux/Issue.md)
+  - [app-install](../java/08linux/app-install.md)
+  - [Command](../java/08linux/command.md)
   - [Nginx](../java/08linux/nginx.md)
-  - Docker
+  - [Docker](../java/08linux/docker.md)
   - [Jenkins](../java/08linux/jenkins.md)
   - Kubernetes
 - 九、中间件
