@@ -632,8 +632,6 @@ Sheep sheep2 = (Sheep)sheep.clone(); //克隆
 
 ![代理模式结构](https://refactoringguru.cn/images/patterns/diagrams/proxy/structure.png?id=f2478a82a84e1a1e512a)
 
-![伪代码](https://refactoringguru.cn/images/patterns/diagrams/proxy/example-zh.png?id=7d99b85a7caef20bc3f4)
-
 # 行为模式(11)
 
 ## 1.责任链：filter

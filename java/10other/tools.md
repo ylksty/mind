@@ -69,6 +69,22 @@
 
 # 开发
 
+## Idea
+
+### Build，Execution，Deployment
+
+- Build Tools
+
+  - Maven
+
+    - Importing
+
+      - Automatically down
+
+        ~~~text
+        idea 解决查看源码没有注释
+        ~~~
+
 ## VsCode
 
 ### 插件
