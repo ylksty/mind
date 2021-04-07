@@ -2,7 +2,7 @@
 
 https://docs.spring.io/spring-framework/docs/current/reference/html/index.html
 
-https://www.bilibili.com/video/BV1dK4y127mH?p=12
+[SPRING源码教程_图灵周瑜](https://www.bilibili.com/video/BV1dK4y127mH?p=38)
 
 # 概念
 
@@ -24,10 +24,24 @@ DefaultListableBeanFactory的功能
 ## 什么是Bean生命周期？
 
 1. BeanDefinition，Bean定义
+
 2. 构造方法推断，选出一个构造方法
+
 3. 实例化，构造方法反射得到对象，可以通过BeanPostProcessor机制对实例化进行干预
+
+   - 实例化前
+   - 实例化后
+
 4. 属性填充，给属性进行自动填充，就是自动注入、依赖注入
+
 5. 初始化，对其他属性赋值、校验
+
+   - @Override postProcessBeforeInitialization
+
+   - @PostConstruct
+
+   - afterPropertiesSet
+
 6. 初始化后，AOP通过BeanPostProcessor机制实现、生成代理对象
 
 ## @Autowire是如何工作的？
@@ -124,6 +138,83 @@ DefaultListableBeanFactory的功能
 4. 通过Cglib或JDK动态代理机制生成一个代理对象，作为最终的bean对象
 
 # Core
+
+## 1.The IoC Container
+
+### 1.6 Customizing the Nature of a Bean
+
+#### 1.6.1 lifecycleCallbacks
+
+##### Initialization Callbacks
+
+~~~java
+org.springframework.beans.factory.InitializingBean
+~~~
+
+### 1.8 Container Extension Points
+
+#### 1.8.3 Customizing Instantiation Logic with a FactoryBean
+
+- 应用
+
+  - spring框架整合mybatis框架
+
+    ```java
+    MybatisAutoConfiguration
+    MapperFactoryBean
+    AutoConfiguredMapperScannerRegistrar
+    ```
+
+### 1.9 Annotation-based Container Configuration
+
+#### 1.9.2 Using @Autowired
+
+- 优先byType，后byName
+
+- 推断构造方法
+  - @Autowired(required = false)
+    - 优先选择参数，多的
+    - 优先选择参数，都可以被注入的
+
+#### 1.9.9 Using @PostConstruct and @PreDestroy
+
+### 1.12 Java-based Container Configuration
+
+#### 1.12.2 Instantiationg the Spring Container by Using AnnotationConfigApplicationContext
+
+~~~java
+AnnotationConfigApplicationContext
+~~~
+
+![AnnotationConfigApplicationContext](spring.assets/annotationConfigApplicationContext.png)
+
+~~~java
+AnnotationConfigWebApplicationContext
+~~~
+
+![AnnotationConfigWebApplicationContext](spring.assets/AnnotationConfigWebApplicationContext.png)
+
+#### 1.12.5 Composing Java-based Configurations
+
+##### Using the @Import Annotation
+
+- @Import注解中使用ImportBeanDefinitionRegistrar向容器中注册bean
+
+### 1.16 The BeanFactory
+
+~~~java
+DefaultListableBeanFactory
+~~~
+
+![DefaultListableBeanFactory](spring.assets/DefaultListableBeanFactory.png)
+
+### 1.18 Container Extension Points
+
+#### 1.18.1 Customizing Beans by Using a BeanPostProcessor
+
+```java
+InstantiationAwareBeanPostProcessor
+```
 
 ## 4.Spring Expression Language(SpEL)
 

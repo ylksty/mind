@@ -2,6 +2,8 @@
 
 https://refactoringguru.cn/design-patterns
 
+[黑马Java设计模式](https://www.bilibili.com/video/BV1Np4y1z7BU)
+
 # 七大原则
 
 > 设计模式的目的：代码重用性、可读性、可扩展性、可靠性（增加新功能，对原来的功能没有影响）、高内聚、低耦合
@@ -113,14 +115,14 @@ https://refactoringguru.cn/design-patterns
 4. 用聚合，组合，依赖，来替换原来的继承
    - 聚合，组合，指原来的父类，通过new父类为，子类的一个属性，来使用原来的父类方法
 
-### 5. 开闭
+## 5. 开闭
 
 > Open Closed Principle
 
 1. （提供方）扩展开放，（使用方）修改关闭。用抽象构建框架，用实现扩展细节
 2. 软件变化，通过扩展软件实体的香味来实现变化，而不是通过修改已有的代码来实现变化
 
-### 6. 迪米特
+## 6. 迪米特
 
 > Demeter Principle
 
@@ -131,7 +133,7 @@ https://refactoringguru.cn/design-patterns
    - 直接的朋友：成员变量，方法参数，方法返回值中的类
    - 非直接朋友：即默认的类，局部变量中的类，最好不要出现
 
-### 7. 合成复用
+## 7. 合成复用
 
 > Composite Reuse Principle
 
@@ -590,39 +592,73 @@ Sheep sheep2 = (Sheep)sheep.clone(); //克隆
 
 ![适配器模式结构](https://refactoringguru.cn/images/patterns/diagrams/adapter/structure-object-adapter.png?id=33dffbe3aece29416244)
 
-- https://refactoringguru.cn/design-patterns/adapter
+- 类适配器
+  - 违背合成复用原则
+  - 适配器必须有接口规范可用
+- 对象适配器
+- 接口适配器模式
 
-## 2. 桥接：遥控器
+### 适配器案例
+
+- io
+
+## 2. 桥接
 
 > 一种结构型设计模式，可将一个大类或一系列紧密相关的类拆分为抽象和现实两个独立的层次结构，从而在开发时分别使用。
 
 ![桥接模式结构](https://refactoringguru.cn/images/patterns/diagrams/bridge/structure-zh.png?id=8f6df21bea5074e798d6)
 
-- https://refactoringguru.cn/design-patterns/bridge
+### 桥接案例
 
-## 3. 组合：上下级
+- 避免类爆炸
+- 遥控器
+
+## 3. 组合
 
 ![组合模式结构](https://refactoringguru.cn/images/patterns/diagrams/composite/structure-zh.png?id=205c2c970f77efe15b68)
 
-- https://refactoringguru.cn/design-patterns/composite
+### 组合分类
 
-## 4.装饰：加密压缩
+- 透明组合模式
+- 安全组合模式
+
+### 组合案例
+
+- 文件夹文件
+- 菜单
+- 军棋
+
+## 4.装饰
 
 ![ 装饰模式结构](https://refactoringguru.cn/images/patterns/diagrams/decorator/structure.png?id=8c95d894aecce5315cc1)
 
-- https://refactoringguru.cn/design-patterns/decorator
+### 装饰场景
 
-  ![伪代码](https://refactoringguru.cn/images/patterns/diagrams/decorator/example.png?id=eec9dc488f00c85f50e7)
+- JDK源码 BufferedWriter
+
+### 装饰案例
+
+- 加密压缩
+
+![伪代码](https://refactoringguru.cn/images/patterns/diagrams/decorator/example.png?id=eec9dc488f00c85f50e7)
+
+* 快餐
 
 ## 5.外观
 
 - https://refactoringguru.cn/design-patterns/facade
 
+### 外观案例
+
+- RequestFacade
+
 ## 6.享元：省内存
 
-- https://refactoringguru.cn/design-patterns/flyweight
-
 ![享元模式结构](https://refactoringguru.cn/images/patterns/diagrams/flyweight/structure.png?id=c1e7e1748f957a479282)
+
+### 享元案例
+
+- 森林画数
 
 ![伪代码](https://refactoringguru.cn/images/patterns/diagrams/flyweight/example.png?id=0818d078c1a79f373e96)
 
@@ -680,9 +716,13 @@ Sheep sheep2 = (Sheep)sheep.clone(); //克隆
 
 ## 
 
+# Issue
 
+## 子类实现接口 父类覆盖方法
 
+先给出结论: 可以起到复用的作用,父类已经实现了, 子类没有必要再重复;
 
+[zhihu](https://www.zhihu.com/question/60167293)
 
 
 
@@ -718,11 +758,9 @@ Sheep sheep2 = (Sheep)sheep.clone(); //克隆
 
 # Other
 
-- https://refactoringguru.cn/design-patterns
 - Plantuml
   - https://plantuml.com/zh/class-diagram#3644720244dd6c6a
 
-- B站
 - runoob
   - https://www.runoob.com/design-pattern/design-pattern-intro.html
 - C语言中文网
