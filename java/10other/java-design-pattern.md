@@ -850,7 +850,13 @@ public class Client {
 
 ![中介者模式结构](https://refactoringguru.cn/images/patterns/diagrams/mediator/structure.png?id=1f2accc7820ecfe9665b)
 
-## 5.备忘录：snapshot
+## 5.备忘录
+
+![备忘录模式结构](https://refactoringguru.cn/images/patterns/diagrams/memento/structure1.png?id=4b4a42363a005b617d4d)
+
+#### snapshot
+
+#### 编辑器撤销
 
 ## 6.观察者：订阅发布
 
