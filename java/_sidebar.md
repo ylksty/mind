@@ -1,6 +1,7 @@
 - [Java全栈](/java/)
 - 一、JavaSE
   - [Java基础](/java/01javase/javaBase.md)
+  - [JVM](../java/01javase/JVM.md)
 - 二、前端基础
 - 三、Mysql
   - [Mysql常用命令](../java/03mysql/mysql-command.md)

@@ -632,11 +632,9 @@ Sheep sheep2 = (Sheep)sheep.clone(); //克隆
 
 ![ 装饰模式结构](https://refactoringguru.cn/images/patterns/diagrams/decorator/structure.png?id=8c95d894aecce5315cc1)
 
-### 装饰场景
+### 装饰案例
 
 - JDK源码 BufferedWriter
-
-### 装饰案例
 
 - 加密压缩
 
@@ -650,29 +648,191 @@ Sheep sheep2 = (Sheep)sheep.clone(); //克隆
 
 ### 外观案例
 
-- RequestFacade
+- Tomcat RequestFacade
 
-## 6.享元：省内存
+## 6.享元
+
+> 省内存
 
 ![享元模式结构](https://refactoringguru.cn/images/patterns/diagrams/flyweight/structure.png?id=c1e7e1748f957a479282)
 
-### 享元案例
-
-- 森林画数
+### 森林画树
 
 ![伪代码](https://refactoringguru.cn/images/patterns/diagrams/flyweight/example.png?id=0818d078c1a79f373e96)
 
+### 俄罗斯方块
+
+### Integer.valueOf方法
+
 ## 7.代理：缓存、cdn
 
-- https://refactoringguru.cn/design-patterns/proxy
+### 静态代理
 
 ![代理模式结构](https://refactoringguru.cn/images/patterns/diagrams/proxy/structure.png?id=f2478a82a84e1a1e512a)
 
+- 缺点
+  - 接口加一个方法，实现类都要改代码实现接口
+
+### JDK动态代理
+
+~~~java
+//卖票接口
+public interface SellTickets {
+    void sell();
+}
+
+//火车站  火车站具有卖票功能，所以需要实现SellTickets接口
+public class TrainStation implements SellTickets {
+
+    public void sell() {
+        System.out.println("火车站卖票");
+    }
+}
+
+//代理工厂，用来创建代理对象
+public class ProxyFactory {
+
+    private TrainStation station = new TrainStation();
+
+    public SellTickets getProxyObject() {
+        //使用Proxy获取代理对象
+        /*
+            newProxyInstance()方法参数说明：
+                ClassLoader loader ： 类加载器，用于加载代理类，使用真实对象的类加载器即可
+                Class<?>[] interfaces ： 真实对象所实现的接口，代理模式真实对象和代理对象实现相同的接口
+                InvocationHandler h ： 代理对象的调用处理程序
+         */
+        SellTickets sellTickets = (SellTickets) Proxy.newProxyInstance(
+          			station.getClass().getClassLoader(),
+                station.getClass().getInterfaces(),
+                new InvocationHandler() {
+                    /*
+                        InvocationHandler中invoke方法参数说明：
+                            proxy ： 代理对象
+                            method ： 对应于在代理对象上调用的接口方法的 Method 实例
+                            args ： 代理对象调用接口方法时传递的实际参数
+                     */
+                    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+
+                        System.out.println("代理点收取一些服务费用(JDK动态代理方式)");
+                        //执行真实对象
+                        Object result = method.invoke(station, args);
+                        return result;
+                    }
+                });
+        return sellTickets;
+    }
+}
+
+//测试类
+public class Client {
+    public static void main(String[] args) {
+        //获取代理对象
+        ProxyFactory factory = new ProxyFactory();
+        
+        SellTickets proxyObject = factory.getProxyObject();
+        proxyObject.sell();
+      
+        System.out.println(proxyObject.getClass());
+        while (true) {}
+    }
+}
+~~~
+
+~~~java
+//程序运行过程中动态生成的代理类
+public final class $Proxy0 extends Proxy implements SellTickets {
+    private static Method m3;
+
+    public $Proxy0(InvocationHandler invocationHandler) {
+        super(invocationHandler);
+    }
+
+    static {
+        m3 = Class.forName("com.itheima.proxy.dynamic.jdk.SellTickets").getMethod("sell", new Class[0]);
+    }
+
+    public final void sell() {
+        this.h.invoke(this, m3, null);
+    }
+}
+~~~
+
+- 缺点，必须要有接口
+
+### CGLIB动态代理
+
+~~~java
+//火车站
+public class TrainStation {
+    public void sell() {
+        System.out.println("火车站卖票");
+    }
+}
+
+//代理工厂
+public class ProxyFactory implements MethodInterceptor {
+
+    private TrainStation target = new TrainStation();
+
+    public TrainStation getProxyObject() {
+        //创建Enhancer对象，类似于JDK动态代理的Proxy类，下一步就是设置几个参数
+        // 不同的是，可以对enhancer加强
+        Enhancer enhancer =new Enhancer();
+        //设置父类的字节码对象
+        enhancer.setSuperclass(target.getClass());
+        //设置回调函数
+        enhancer.setCallback(this);
+        //创建代理对象
+        TrainStation obj = (TrainStation) enhancer.create();
+        return obj;
+    }
+
+    /**
+        intercept方法参数说明：
+            o ： 代理对象
+            method ： 真实对象中的方法的Method实例
+            args ： 实际参数
+            methodProxy ：代理对象中的方法的method实例
+     */
+    public TrainStation intercept(Object o, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
+        System.out.println("代理点收取一些服务费用(CGLIB动态代理方式)");
+        TrainStation result = (TrainStation) methodProxy.invokeSuper(o, args);
+        return result;
+    }
+}
+
+//测试类
+public class Client {
+    public static void main(String[] args) {
+        //创建代理工厂对象
+        ProxyFactory factory = new ProxyFactory();
+        //获取代理对象
+        TrainStation proxyObject = factory.getProxyObject();
+
+        proxyObject.sell();
+    }
+}
+~~~
+
 # 行为模式(11)
 
-## 1.责任链：filter
+## 1.责任链
+
+- 优点
+  - 降低请求发送者和接受者的耦合度
+  - 增强可扩展性，满足**开闭原则**
+  - 增强指派职责的灵活性，动态修改次序，新增和删除
+  - 简化了对象之间的连接，不需要if else语句
+  - 复合**单一职责**
 
 ![责任链模式结构](https://refactoringguru.cn/images/patterns/diagrams/chain-of-responsibility/structure.png?id=848f0fc8dca57a44974d)
+
+### 请假流程
+
+### FilterChain
+
+### Spring security的filter
 
 ## 2.命令：点餐，富文本
 

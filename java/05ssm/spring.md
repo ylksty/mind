@@ -1,8 +1,20 @@
+
+
 # Spring
 
 https://docs.spring.io/spring-framework/docs/current/reference/html/index.html
 
 [SPRING源码教程_图灵周瑜](https://www.bilibili.com/video/BV1dK4y127mH?p=38)
+
+# processon
+
+[Spring核心知识点](https://www.processon.com/view/5fb52132e0b34d0d2240f000#map)
+
+[Spring框架注解](https://www.processon.com/view/6006c9e55653bb1b2e2c494e#map)
+
+[SpringIOC+循环依赖](https://www.processon.com/view/604821ec07912947636fa22b)
+
+[Spring框架思维导图](https://www.processon.com/view/606149cf0791295627bd47bc?fromnew=1#map)
 
 # 概念
 
@@ -153,6 +165,12 @@ org.springframework.beans.factory.InitializingBean
 
 ### 1.8 Container Extension Points
 
+#### 1.8.1 Customizing Beans by Using a BeanPostProcessor
+
+```java
+InstantiationAwareBeanPostProcessor
+```
+
 #### 1.8.3 Customizing Instantiation Logic with a FactoryBean
 
 - 应用
@@ -186,13 +204,9 @@ org.springframework.beans.factory.InitializingBean
 AnnotationConfigApplicationContext
 ~~~
 
-![AnnotationConfigApplicationContext](spring.assets/annotationConfigApplicationContext.png)
-
 ~~~java
 AnnotationConfigWebApplicationContext
 ~~~
-
-![AnnotationConfigWebApplicationContext](spring.assets/AnnotationConfigWebApplicationContext.png)
 
 #### 1.12.5 Composing Java-based Configurations
 
@@ -200,23 +214,45 @@ AnnotationConfigWebApplicationContext
 
 - @Import注解中使用ImportBeanDefinitionRegistrar向容器中注册bean
 
+### 1.15 Additional Capabilityes of the ApplicationContext
+
 ### 1.16 The BeanFactory
 
 ~~~java
 DefaultListableBeanFactory
 ~~~
 
-![DefaultListableBeanFactory](spring.assets/DefaultListableBeanFactory.png)
+#### 三级缓存
 
-### 1.18 Container Extension Points
+~~~java
+DefaultSingletonBeanRegistry implements SingletonBeanRegistry
+~~~
 
-#### 1.18.1 Customizing Beans by Using a BeanPostProcessor
+- 解决循环依赖
 
-```java
-InstantiationAwareBeanPostProcessor
-```
+> A属性填充时发现依赖B，就去getB，重复B的创建流程，发现B依赖A，就去getA，此时在三级缓存中发现A，此时清除三级缓存，将A存入二级缓存，完成B对象的创建，将B对象添加到一级缓存，此时A对象中的B对象完成赋值，A对象创建完成，将A对象添加到一级缓存。
+>
+> 二级缓存可解决循环依赖
+>
+> 三级缓存为了处理aop过程中的动态代理，
 
 ## 4.Spring Expression Language(SpEL)
 
 [SpEL语法扫盲与查询手册](https://spring.hhui.top/spring-blog/2020/05/18/200518-SpringBoot%E7%B3%BB%E5%88%97%E4%B9%8BSpEL%E8%AF%AD%E6%B3%95%E6%89%AB%E7%9B%B2%E4%B8%8E%E6%9F%A5%E8%AF%A2%E6%89%8B%E5%86%8C/)
+
+
+
+# 基本概念
+
+## Bean
+
+- 被Spring管理的对象叫做Bean
+- Bean肯定式一个对象
+- 对象不一定是Bean
+
+## BeanDefinition
+
+# IOC
+
+# AOP
 
