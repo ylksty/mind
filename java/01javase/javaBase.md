@@ -151,7 +151,34 @@ public class Test{
 
 ### 1.Lambda表达式
 
+~~~java
+// 类型推断
+Comparator<Integer> com = (x, y) -> Integer.compare(x, y);
+// 方法引用
+Comparator<Integer> com = Integer::compare;
+int compare = com.reversed().compare(1, 2);
+System.out.println(compare);
+~~~
+
+#### 本质
+
+接口抽象方法的实现逻辑
+
+#### 参数列表的类型推断
+
 ### 2.函数式（Functional）接口
+
+#### 什么是函数式(Functional)接口？
+
+只包含一个抽象方法的接口
+
+#### 如何理解函数式接口？
+
+Lambda表达式就是一个函数式接口的实例
+
+匿名实现类都可以用Lambda来代替
+
+#### 四大核心函数式接口
 
 ### 3.方法引用与构造器引用
 
