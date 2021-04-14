@@ -14,6 +14,17 @@
 
 ## 9、常用类
 
+- 注意
+
+~~~java
+String s1 = "javaEEhadoop";
+final String s4 = "javaEE"; // s4: 常量
+String s5 = s4 + "Hadoop";
+s1 == s5; // true
+~~~
+
+
+
 ## 10、枚举与注解
 
 ## 11、Java集合
@@ -21,16 +32,27 @@
 ### 1.Java集合框架概述
 
 - Collection
-  - List
-    - ArrayList
-    - LinkedList
-    - Vector
+  - List：有序、可重复（动态数组，替换原有的数组）
+    - ArrayList：数组存储（主要实现；线程不安全，效率高）
+    - LinkedList：双向列表（频繁插入删除效率高）
+    - Vector：线程安全
   - Set
     - HashSet
       - LinkedHashSet
 - Map
   - HashMap
   - LinkedHashMap
+- 注意
+
+~~~java
+// 数组转集合
+List arr1 = Arrays.asList(new int[]{123, 456});
+arr1.size(); // 1
+List arr2 = Arrays.asList(new Integer[]{123, 456});
+arr2.size(); // 2
+~~~
+
+
 
 ### 2.Collection接口方法
 

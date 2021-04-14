@@ -10,6 +10,7 @@
 - 五、SSM框架
   - MyBatis
   - [Spring](../java/05ssm/spring.md)
+  - [Spring-core](../java/05ssm/spring-core.md)
   - SpringMVC
 - 六、大前端
   - [Map](/java/06vue/map.md)
