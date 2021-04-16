@@ -240,19 +240,3 @@ DefaultSingletonBeanRegistry implements SingletonBeanRegistry
 
 [SpEL语法扫盲与查询手册](https://spring.hhui.top/spring-blog/2020/05/18/200518-SpringBoot%E7%B3%BB%E5%88%97%E4%B9%8BSpEL%E8%AF%AD%E6%B3%95%E6%89%AB%E7%9B%B2%E4%B8%8E%E6%9F%A5%E8%AF%A2%E6%89%8B%E5%86%8C/)
 
-
-
-# 基本概念
-
-## Bean
-
-- 被Spring管理的对象叫做Bean
-- Bean肯定式一个对象
-- 对象不一定是Bean
-
-## BeanDefinition
-
-# IOC
-
-# AOP
-

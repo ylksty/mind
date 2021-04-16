@@ -1,5 +1,33 @@
 # Spring-core
 
+# Spring框架注解
+
+## 核心注解
+
+### @Configuration
+
+class level，提供一个或多个bean方法
+
+## 原型注解
+
+## SpringBoot注解
+
+## SpringCloud注解
+
+## 缓存注解
+
+## 任务执行和调度注解
+
+## 测试注解
+
+## 数据库访问注解
+
+## JPA注解
+
+## SpringMVC和REST注解
+
+## 全局异常注解
+
 # 基本概念
 
 ## Bean
@@ -100,7 +128,7 @@ HierarchicalBeanFactory和SingletonBeanRegistry基础上加强，支持父BeanFa
 
 ### AutowireCapableBeanFactory
 
-支持Bean自动装配
+支持Bean创建过程中自动装配
 
 ### AbstractBeanFactory
 

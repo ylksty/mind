@@ -5,10 +5,11 @@
 - 二、前端基础
 - 三、Mysql
   - [Mysql常用命令](../java/03mysql/mysql-command.md)
+  - [JDBC](../java/03mysql/jdbc.md)
 - 四、JavaWeb
   - [JavaWeb](../java/04javaweb/java-web.md)
 - 五、SSM框架
-  - MyBatis
+  - [MyBatis](../java/05ssm/my-batis.md)
   - [Spring](../java/05ssm/spring.md)
   - [Spring-core](../java/05ssm/spring-core.md)
   - SpringMVC
@@ -16,10 +17,12 @@
   - [Map](/java/06vue/map.md)
   - uni-app
 - 七、微服务
+  - [spring-boot](../java/07micro/spring-boot.md)
   - SpringBoot
     - [artifactId](../java/07micro/boot/artifactId.md)
     - [SpringBoot-Awesome](../java/07micro/boot/SpringBoot-Awesome.md)
     - [ruoyi-cloud](../java/07micro/boot/ruoyi-cloud.md)
+    - [ruoyi-vue](../java/07micro/boot/ruoyi-vue.md)
     - [SpringBootIssue](../java/07micro/boot/SpringBootIssue.md)
   - SpringCloud
     - [spring-cloud-starter-gateway](../java/07micro/cloud/spring-cloud-starter-gateway.md)
